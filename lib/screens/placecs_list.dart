@@ -8,17 +8,17 @@ class PlacesListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Places'),
+        title: const Text('Your Places'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () {
               Navigator.of(context).pushNamed(AddPlaceScreen.routName);
             },
           ),
         ],
       ),
-      body: Center( 
+      body: const Center( 
         child: CircularProgressIndicator(),
       ),
     );
