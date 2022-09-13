@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             primarySwatch: Colors.indigo,
             colorScheme: ColorScheme.fromSwatch(accentColor: Colors.amber)),
-        home: PlacesListScreen(),
+        home: const PlacesListScreen(),
         routes: {
-          AddPlaceScreen.routName: (context) => AddPlaceScreen(),
+          AddPlaceScreen.routName: (context) => const AddPlaceScreen(),
         },
       ),
     );
