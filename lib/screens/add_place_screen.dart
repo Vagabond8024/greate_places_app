@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:greate_places_app/providers/great_places.dart';
 import 'package:greate_places_app/widgets/image_input.dart';
+import 'package:provider/provider.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   static const routName = '/add-place';
@@ -11,6 +15,21 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleTextController = TextEditingController();
+  File? _peckedImage;
+
+  void _selectImage(File pickedImage) {
+    _peckedImage = pickedImage;
+  }
+
+  void _savePlace() {
+    if (_titleTextController.text.isEmpty || _peckedImage == null) {
+      return;
+    }
+    Provider.of<GreatPlaces>(context)
+        .addPlace(_titleTextController.text, _peckedImage!);
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +52,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   ),
                   const SizedBox(height: 10),
                   Container(),
-                  const ImageInput()
+                  ImageInput(onSelectImage: _selectImage)
                 ],
               ),
             ),
@@ -46,7 +65,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 backgroundColor: Theme.of(context).colorScheme.secondary),
             // ButtonStyle(elevation: MaterialStateProperty.all(0)),
-            onPressed: () {},
+            onPressed: _savePlace,
           ),
         ],
       ),
