@@ -25,7 +25,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     if (_titleTextController.text.isEmpty || _peckedImage == null) {
       return;
     }
-    Provider.of<GreatPlaces>(context)
+    Provider.of<GreatPlaces>(context, listen: false)
         .addPlace(_titleTextController.text, _peckedImage!);
     Navigator.of(context).pop();
   }
