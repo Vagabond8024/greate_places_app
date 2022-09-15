@@ -26,7 +26,7 @@ class PlacesListScreen extends StatelessWidget {
               : ListView.builder(
                   itemCount: value.items.length,
                   itemBuilder: (context, index) => ListTile(
-                    leading: CircleAvatar(backgroundImage: FileImage(value.items[index].image),),
+                    leading: CircleAvatar(backgroundImage: FileImage(value.items[index].image!),),
                     title: Text(value.items[index].title),
                     onTap: () {
                       
