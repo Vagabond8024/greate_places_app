@@ -65,7 +65,7 @@ class _ImageInputState extends State<ImageInput> {
             icon: const Icon(Icons.camera),
             label: Text(
               'Teke Picture',
-              style: TextStyle(color: Theme.of(context).primaryColor),
+              // style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
         )
