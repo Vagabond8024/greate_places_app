@@ -28,6 +28,8 @@
 	<string>“Greate places” Would Like to Access Your Photos. This lets you upload photos of your lovely Places</string>
 	<key>NSCameraUsageDescription</key>
 	<string>“Greate places” Would Like to Access Your Camera. This lets you take photos of your lovely Places</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>“Greate places” Would Like to Access Your Loaction.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
