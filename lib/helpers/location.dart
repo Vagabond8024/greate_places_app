@@ -15,6 +15,7 @@ class LocationHelper {
       {'latlng': '$lat,$lng', 'key': '$GOOGLE_API_KEY'},
     );
     final response = await http.get(url);
-    return json.decode(response.body)['results']['0']['formatted_address'];
+    print(response.body);
+    return json.decode(response.body)['results'][0]['formatted_address'];
   }
 }

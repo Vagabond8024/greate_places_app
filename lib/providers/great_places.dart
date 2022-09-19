@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:greate_places_app/helpers/db_helper.dart';
@@ -10,6 +11,10 @@ class GreatPlaces with ChangeNotifier {
 
   List<Place> get items {
     return [..._items];
+  }
+
+  Place findById(String id) {
+    return _items.firstWhere((element) => element.id == id);
   }
 
   Future<void> addPlace(
